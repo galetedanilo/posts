@@ -1,0 +1,13 @@
+<app-post-form (submitedEmitter)="onSubmit($event)" />
+<div>Posts count: {{ store.postsCount() }}</div>
+@if (store.isLoading()) {
+<div>...loading</div>
+} @if (store.error()) {
+<strong>{{ store.error() }}</strong>
+}
+
+<ul>
+  @for (post of store.posts(); track post.id) {
+  <li>{{ post.title }} <span (click)="store.removePost(post.id)">X</span></li>
+  }
+</ul>

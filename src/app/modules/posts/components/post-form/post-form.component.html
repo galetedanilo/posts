@@ -1,0 +1,5 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+    <label for="title">Titulo</label>
+    <input type="text" id="title" name="title" placeholder="Digite o titulo" formControlName="title" />
+    <button type="submit">Salvar</button>
+</form>
